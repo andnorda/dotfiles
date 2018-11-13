@@ -1,0 +1,10 @@
+[alias]
+	a = add --all
+	s = status
+	cm = commit -m
+	df = diff HEAD
+[user]
+	email = andnorda@gmail.com
+	name = Andreas Nordahl
+[push]
+	default = simple
