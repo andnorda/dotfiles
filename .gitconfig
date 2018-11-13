@@ -3,6 +3,7 @@
 	s = status
 	cm = commit -m
 	df = diff HEAD
+	co = checkout
 [user]
 	email = andnorda@gmail.com
 	name = Andreas Nordahl
