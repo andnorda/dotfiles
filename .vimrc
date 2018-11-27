@@ -14,6 +14,7 @@ Plug 'wincent/terminus'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -60,7 +61,7 @@ set backupdir=~/.vim/tmp/
 set directory=~/.vim/tmp/
 set hlsearch
 set incsearch
-set hidden
+set autowrite
 
 " complete current tag on </
 inoremap <buffer> </ </<C-x><C-o><C-y>
@@ -74,4 +75,3 @@ nnoremap <C-H> <C-W><C-H>
 " more natural split opening
 set splitbelow
 set splitright
-
