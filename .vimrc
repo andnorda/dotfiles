@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'ajh17/VimCompletesMe'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
@@ -17,10 +18,22 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-abolish'
+Plug 'scrooloose/nerdtree'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
+Plug 'moll/vim-node'
 
 call plug#end()
 
+map <Space> <Leader>
+
+let g:jsx_ext_required = 0
+
 nmap <C-P> :Files<CR>
+
+let NERDTreeShowHidden=1
+nmap <Leader>n :NERDTreeFind<cr>zz
+
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -28,19 +41,19 @@ endif
 
 colorscheme gruvbox
 
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'python': ['yapf'],
 \}
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+
 let g:ale_fix_on_save = 1
 nmap <silent> <C-N> <Plug>(ale_next_wrap)
-nmap <silent> <C-M> <Plug>(ale_previous_wrap)
-
-" #noNERDTree
-let g:netrw_liststyle = 3
+nmap <silent> <C-B> <Plug>(ale_previous_wrap)
 
 " easier split navigations
 nnoremap <C-J> <C-W><C-J>
