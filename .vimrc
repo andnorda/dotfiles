@@ -25,7 +25,32 @@ Plug 'moll/vim-node'
 
 call plug#end()
 
+
 map <Space> <Leader>
+
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline_mode_map = {
+\ '__'     : '-',
+\ 'c'      : 'C',
+\ 'i'      : 'I',
+\ 'ic'     : 'I',
+\ 'ix'     : 'I',
+\ 'n'      : 'N',
+\ 'multi'  : 'M',
+\ 'ni'     : 'N',
+\ 'no'     : 'N',
+\ 'R'      : 'R',
+\ 'Rv'     : 'R',
+\ 's'      : 'S',
+\ 'S'      : 'S',
+\ ''     : 'S',
+\ 't'      : 'T',
+\ 'v'      : 'V',
+\ 'V'      : 'V',
+\ ''     : 'V',
+\ }
+let g:airline_section_x = ''
+let g:airline_section_b = ''
 
 let g:jsx_ext_required = 0
 
