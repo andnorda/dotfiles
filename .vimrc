@@ -22,9 +22,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 Plug 'moll/vim-node'
+Plug 'osyo-manga/vim-anzu'
 
 call plug#end()
-
 
 map <Space> <Leader>
 
@@ -73,6 +73,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
+\   'html': ['prettier'],
+\   'css': ['prettier'],
 \   'python': ['yapf'],
 \}
 
