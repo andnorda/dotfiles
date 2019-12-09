@@ -1,7 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'ajh17/VimCompletesMe'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
@@ -26,7 +24,7 @@ Plug 'osyo-manga/vim-anzu'
 
 call plug#end()
 
-map <Space> <Leader>
+let mapleader = " "
 
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_mode_map = {
@@ -54,10 +52,10 @@ let g:airline_section_b = ''
 
 let g:jsx_ext_required = 0
 
-nmap <C-P> :Files<CR>
+nnoremap <C-P> :Files<CR>
 
 let NERDTreeShowHidden=1
-nmap <Leader>n :NERDTreeFind<cr>zz
+nnoremap <Leader>n :NERDTreeFind<cr>zz
 
 
 if executable('ag')
@@ -79,8 +77,8 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
-nmap <silent> <C-N> <Plug>(ale_next_wrap)
-nmap <silent> <C-B> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-N> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-B> <Plug>(ale_previous_wrap)
 
 " easier split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -92,7 +90,6 @@ nnoremap <C-H> <C-W><C-H>
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 
 set backspace=indent,eol,start
 set number
@@ -110,5 +107,9 @@ set incsearch
 set autowrite
 set splitbelow
 set splitright
+set clipboard=unnamed
 
-set tags=tags
+nnoremap - ddp
+nnoremap _ ddkP
+nnoremap <leader>ev :split $MYVIMRC<cr>G
+nnoremap <leader>sv :source $MYVIMRC<cr>
